@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../style/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Local Directory Route</title>
+<script>
+  // JavaScript function to print the local directory route
+  function printLocalDirectoryRoute() {
+    var path = window.location.pathname; // Get the pathname of the current URL
+    document.getElementById("route").innerText = path;
+  }
+</script>
+</head>
+<body onload="printLocalDirectoryRoute()">
+  <h1>Local Directory Route</h1>
+  <p id="route"></p>
+	<form action="../back.cgi" method="POST" enctype="application/x-www-form-urlencoded">
+		First Name: <br><input type="text" name="fname" size=30><p>
+		Last Name:  <br><input type="text" name="lname" size=30><p>
+	<input type="submit"><p>
+	</form>
+</body>
+</html>

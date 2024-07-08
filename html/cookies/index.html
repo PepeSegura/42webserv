@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../style/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print Local Directory Route</title>
+<script>
+  // JavaScript function to print the local directory route
+  function printLocalDirectoryRoute() {
+    var path = window.location.pathname; // Get the pathname of the current URL
+    document.getElementById("route").innerText = path;
+  }
+</script>
+</head>
+<body onload="printLocalDirectoryRoute()">
+  <h1>Local Directory Route</h1>
+  <p id="route"></p>
+</body>
+</html>

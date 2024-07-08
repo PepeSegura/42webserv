@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style/style.css" />
+		<meta charset="UTF-8">
+		<script>
+			// Function to make AJAX request and update div content
+			function loadViewersCount() {
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						document.getElementById("viewersCount").innerHTML = xhr.responseText;
+					}
+				};
+				xhr.open("GET", "/cgi_test/views.py", true);  // Replace "/cgi-bin/views.py" with the actual URL or path to your CGI script
+				xhr.send();
+			}
+		</script>
+		<title>Webserv</title>
+	</head>
+
+	<body>
+		<h1>This is a Heading</h1>
+		<p>This is a paragraph.</p>
+		<img src="webserv.webp" alt="test" height="300" width="600">
+		<br></br>
+
+		<a href="broken">
+			<button>Wrong Link</button>
+		</a>
+		<a href="error_page/404.html">
+			<button>Go to 404</button>
+		</a>
+		<a href="autoindex/">
+			<button>Autoindex</button>
+		</a>
+		<a href="redirect/" target="_blank">
+			<button>Redirect</button>
+		</a>
+		<a href="alias/">
+			<button>Alias</button>
+		</a>
+		<a href="media/">
+			<button>Media</button>
+		</a>
+		<br></br>
+
+		<p>CGI_TEST</p>
+		<a href="cgi_test/cgi_upload/">
+			<button>UPLOAD</button>
+		</a>
+		<a href="cgi_test/cgi_post/">
+			<button>POST</button>
+		</a>
+		<a href="cgi_test/cgi_get/">
+			<button>GET</button>
+		</a>
+		<br></br>
+		<p>OTHERS</p>
+		<a href="http://google.com" target="_blank">
+			<button>Google</button>
+		</a>
+		<br></br>
+
+		<p>Viewers Count</p>
+		<div id="viewersCount"></div>
+		<script> window.onload = loadViewersCount;</script>
+	</body>
+</html>
